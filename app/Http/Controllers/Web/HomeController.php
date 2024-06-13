@@ -37,20 +37,8 @@ class HomeController extends Controller
 
     public function about()
     {
-        $added_blog_ids = [];
-        $carousel_blogs = Blog::with(['category', 'tags', 'author'])->orderBy('views', 'DESC')->take(5)->get();
-        $added_blog_ids = array_merge($added_blog_ids, $carousel_blogs->pluck('id')->toArray());
-        $trending_blogs = Blog::with(['category', 'tags', 'author'])->whereNotIn('id', $added_blog_ids)->orderBy('views', 'DESC')->take(6)->get();
-        $added_blog_ids = array_merge($added_blog_ids, $trending_blogs->pluck('id')->toArray());
-        $editor_picks = Blog::with(['category', 'tags', 'author'])->whereNotIn('id', $added_blog_ids)->orderBy('views', 'DESC')->take(3)->get();
-        $added_blog_ids = array_merge($added_blog_ids, $editor_picks->pluck('id')->toArray());
-        $recent_article = Blog::with(['category', 'tags', 'author'])->whereNotIn('id', $added_blog_ids)->orderBy('id', 'DESC')->take(4)->get();
         $data = [
             'page_title' => 'About',
-            'carousel_blogs' => $carousel_blogs,
-            'trending_blogs' => $trending_blogs,
-            'editor_picks' => $editor_picks,
-            'recent_article' => $recent_article,
         ];
         return view('web.about', $data);
     }

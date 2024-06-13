@@ -21,7 +21,7 @@
                             </div> <!-- .navbar-header -->
                             <div class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="{{ route('index') }}">About</a></li>
+                                    <li><a href="{{ route('about') }}">About</a></li>
                                     @foreach($top_categories as $top_category)
                                         <li>
                                             <a href="{{ route('category.index', $top_category->slug) }}">{{ $top_category->title }}</a>
