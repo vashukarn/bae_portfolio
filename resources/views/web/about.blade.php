@@ -14,7 +14,6 @@
             </div>
         </div>
     </section>
-
     <section id="mt_about_me">
         <div class="container">
             <div class="row">

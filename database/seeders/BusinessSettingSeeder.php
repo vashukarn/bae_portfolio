@@ -67,8 +67,8 @@ class BusinessSettingSeeder extends Seeder
             [
                 'key' => 'favicon',
                 'data_type' => 'text',
-                'dev_value' => config('app.url') . '/favicon.png',
-                'prod_value' => config('app.url') . '/favicon.png',
+                'dev_value' => config('app.url') . '/favicon.jpg',
+                'prod_value' => config('app.url') . '/favicon.jpg',
             ],
             [
                 'key' => 'logo',
